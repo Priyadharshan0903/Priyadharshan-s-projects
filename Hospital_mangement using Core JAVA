@@ -1,0 +1,353 @@
+
+import java.util.*;
+import java.util.Calendar;
+class patient{
+    String nm,g,mn;
+    int a;
+    void pd()
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("\nEnter the Patient Details");
+        System.out.println();
+        System.out.print("Name 		: ");
+        nm=s.nextLine();
+        System.out.print("Gender       	: ");
+        g=s.nextLine();
+        System.out.print("Mobile Number :");
+        mn=s.nextLine();
+        System.out.print("Age  		: ");
+        a=s.nextInt();
+    }
+    void patient_print()
+    {
+        System.out.println("\n---------------------------------------------");
+        System.out.println("	       Patient Details		");
+        System.out.println("---------------------------------------------");
+        System.out.println("Name		    : "+nm);
+        System.out.println("Gender	        : "+g);
+        System.out.println("Mobile Number	: "+mn);
+        System.out.println("Age 		    : "+a);
+        System.out.println("\n---------------------------------------------");
+    }
+}
+
+class doctor{
+    int d_ch = 0;
+    int rate = 0;
+    Scanner ip= new Scanner(System.in);
+    int doctor_func()
+    {
+        Thread t = Thread.currentThread();
+        System.out.print("\n1.Orthologist\t2.Dermatologist \t 3.Cardiologists \t 4.Neurologists \t 5.Nephrologists \t 6.General medicine Doctor\nEnter the required doctor number: ");
+        d_ch = ip.nextInt();
+        if(d_ch == 1)
+        {
+            System.out.print("\nHello I am your doctor Subash MBBS,Ortho Specialist\nSo what's your problem");
+            try{
+                for(int n=0;n<=2;n++){
+                    System.out.print("\n ..... Counselling going on ....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and take X-ray and Scan");
+            rate = 150;
+        }
+        else if(d_ch == 2)
+        {
+            System.out.print("\nHello I am your doctor Subhashni MBBS, Dermatologist\nSo what's your skin problem\n");
+            try{
+                for(int n=0;n<=2;n++){
+                    System.out.print("\n .....  Counselling going on .....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and take blood test.");
+            rate = 200;
+        }
+        else if(d_ch==3)
+        {
+            System.out.print("\nHello I am your doctor sakthi, cardiologist\nSo please explain your problem\n");
+            try{
+                for(int n=0;n<=2;n++){
+                    System.out.print("\n .....  Counselling going on .....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and please take the scan and ECG.");
+            rate = 250;
+        }
+        else if(d_ch==4)
+        {
+            System.out.print("\nHello I am your doctor priya MBBS, neurorologist\nSo please explain your problem\n");
+            try{
+                for(int n=0;n<=2;n++){
+                    System.out.print("\n .....  Counselling going on .....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and please take your scan");
+            rate = 300;
+        }
+        else if(d_ch==5)
+        {
+            System.out.print("\nHello I am your doctor ram MBBS, nephrologist\nSo please explain your problem\n");
+            try{
+                for(int n=0;n<=2;n++){
+                    System.out.print("\n .....  Counselling going on .....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and please provide your blood samples");
+            rate = 350;
+        }
+
+
+        else
+        {
+            System.out.print("\nHello I am your doctor Harbhajan MBBS, General Practitioner\nTell me what's the problem ?");
+            try{
+                for(int n=0;n<3;n++){
+                    System.out.print("\n .... Counselling going on .....\n");
+                    Thread.sleep(1000);
+                }
+                System.out.println("After Counselling");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            System.out.print("\nGo to lab and take blood test.");
+            rate = 100;
+        }
+        return rate;
+    }
+    void medicines()
+    {
+        try{
+            for(int n=0;n<1;n++){
+                System.out.print("\n .... Yeah It's all fine. Don't worry......\n");
+                Thread.sleep(2000);
+            }
+            System.out.println("\nGo and fetch medicines . Its all free !!!");
+        } catch(InterruptedException e){
+            System.out.print("\n ......");
+        }
+        if(d_ch == 1)System.out.print("\n\nPlease take these medicines for a week.\n\n1. Prozac,2. Paxil 3.Carisoprodol ");
+        else if(d_ch == 2)System.out.print("\nPlease take these medicines for a week.\n1.clobetasol\t2.Aloa vera gel");
+        else if(d_ch==3)System.out.println("Please take these medicines for a month.\n\tAnd Come to the check up Next Month\n1.Digoxin\t2.Vasodilators\t3.ACE Inhibitors.");
+        else if(d_ch==4)System.out.println("Please take these medicines for a week.\n\t1.Pregabalin\t2.doxepin\t3.Gabapentin");
+        else if(d_ch==5)System.out.println("Please take these medicines for a week.\n\t1.Co-trimoxazole\t2.Isoniazid\t3.Prednisolone.");
+        else System.out.print("\nPlease take these medicines for a week.\n1.Paracetamol\n2.Novamax-250mg");
+    }
+    
+}
+class doctor_appointment_cls
+{
+    void doctor_appoint_1()
+    {
+        Scanner ip = new Scanner(System.in);
+        int d_appoin_ch,d_appoin_time,temp_10;
+        int count_1=0,count_2=0;
+        if(count_1>30 && count_2>30)System.out.print("\nSorry Today session was completely booked .. Try Tomorrow");
+        else
+        {
+            System.out.print("\nAvailable doctors : \n1.Orthologist\t2.Dermatologist \t 3.Cardiologists \t 4.Neurologists \t 5.Nephrologists \t 6.General medicine Doctor\nEnter the required doctor number: ");
+            System.out.print("Enter the doctor number you want : ");
+            d_appoin_ch = ip.nextInt();
+            System.out.print("\nTimings are : 1.(9.00AM - 12.00PM) \t 2.(5.00PM - 9.00PM)\nEnter the session number you want : ");
+            d_appoin_time = ip.nextInt();
+            temp_10 = d_appoin_time;
+            if(d_appoin_time == 1){
+                count_1++;
+                System.out.print("Your appointment was booked Successfully. Come between FN 9-12 !!! \n Your token number is "+count_1);
+            }
+            else{
+                count_2++;
+                System.out.print("Your appointment was booked Successfully. Come between AN 6-9 !!! \n Your token number is "+count_2);
+            } 
+        }
+
+    }
+}
+class laboratory
+{
+    int lab_ch_arr[] = new int[50];
+    void lab()
+    {
+        System.out.print("\n\n ---------------- !!Welcome to the laboratory !! ------------------\n1.Blood Testing \t2.Sugar Testing\t3.Scan\t4.X-ray\t5.ECG\t6.Exit");
+        Scanner ip = new Scanner(System.in);
+        int i=0;
+        int temp =0;
+        while(temp!=6){
+            System.out.print("\nEnter your required lab no. : ");
+            int temp_in = ip.nextInt();
+            if(temp_in != 6){
+            try{
+                if(temp_in == 3 || temp_in == 4 || temp_in == 5){
+                    for(int n=0;n<2;n++){
+                        System.out.print("\n .... First drink full of water upto your stomach hold .....\n");
+                        Thread.sleep(2000);    
+                }}
+                else{
+                    for(int n=0;n<2;n++){
+                        System.out.print("\n .... First we check the blood pressure .....\n");
+                        Thread.sleep(2000);
+                    }
+                }
+                System.out.println("\nOK ...... It's all fine with blood pressure.....\nLets move to the test ... \n ............. Your test finished ................");
+            } catch(InterruptedException e){
+                System.out.print("\n ......");
+            }
+            }
+            temp = temp_in;
+            if(temp_in != 6){
+            lab_ch_arr[i] = temp_in;
+            i++;
+            }
+        }
+        int count=0;
+        int j;
+        for(j=0;j<lab_ch_arr.length;j++){
+            if(lab_ch_arr[j] != 0)count++;
+        }
+        System.out.print("\nThank you .. Your results ready within "+count*30+" minutes \n");
+    }
+
+
+
+    int lab_bill()
+    {
+        int rate=0;
+        int k;
+        for(k=0;k<lab_ch_arr.length;k++)
+        {
+            if(lab_ch_arr[k]==1) 
+            {
+                rate = rate+80;
+                System.out.print("\nBlood Test     -        RS.80/-\n");
+            }
+            else if(lab_ch_arr[k]==2)
+            {
+                rate = rate+120;
+                System.out.print("\nSugar Test     -        RS.120/-\n");
+            }
+            else if(lab_ch_arr[k]==3)
+            {
+                rate = rate+500;
+                System.out.print("\nScan      -        RS.500/-\n");
+            }
+            else if(lab_ch_arr[k]==4)
+            {
+                rate = rate+120;
+                System.out.print("\nX-ray     -        RS.120/-\n");
+            }
+            else if(lab_ch_arr[k]==5)
+            {
+                rate = rate+120;
+                System.out.print("\nECG     -        RS.150/-\n");
+            }
+            else continue;
+        }
+        return rate;
+    }
+}
+
+public class hospital_testing {
+    public static void main(String a[]){
+        String months[] = {
+            "Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
+        };
+        Calendar calendar = Calendar.getInstance();
+        //System.out.println("--------------------------------------------------------------------------------");
+        int count1 = 4, count2 = 4, count3 = 4, count4 = 4, count5 = 4, count6 = 4;
+        patient pat = new patient();
+        hospital_testing hos = new hospital_testing();
+        doctor doc = new doctor();
+        doctor_appointment_cls doc_appo = new doctor_appointment_cls();
+        laboratory lab_obj = new laboratory();
+        //////Reception
+        int op_count = 0;
+        Scanner ip = new Scanner(System.in);
+        int entry_ch = 1;
+        while(entry_ch == 1)
+        {
+            System.out.print("\n\n-------------------------------------- Star Hospital ------------------------------------------");
+            System.out.print("\nDate: " + months[calendar.get(Calendar.MONTH)] + " " + calendar.get(Calendar.DATE) + " " + calendar.get(Calendar.YEAR));
+            System.out.println("\t\t\t\t\t\tTime: " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND));
+            System.out.print("\n\t1.Doctor Appointment\t2.Out Patient\t 3.Labs\t4.Appointment doctors\t5.EXIT");
+            System.out.print("\nEnter your choice : ");
+            int ch = ip.nextInt();
+            int doc_rate,lab_rate,doc_num;
+            switch(ch)
+            {
+                case 1:
+                {
+                    System.out.print("\n------------------ Welcome to Doctor Appointment -------------------\n");
+                    doc_appo.doctor_appoint_1();
+                    break;
+                }
+                case 2:
+                {
+                    op_count++;
+                    pat.pd();
+                    doc_rate= doc.doctor_func();
+                    lab_obj.lab();
+                    doc.medicines();
+                    System.out.print("\n\n------------------------ Billing --------------------------");
+                    pat.patient_print();
+                    System.out.print("Doctor Fees     -        Rs."+doc_rate+"/-\n------------------------- Lab Bill ---------------------------\n");
+                    lab_rate = lab_obj.lab_bill();            
+                    System.out.print("\n -----------------------------------------------------------\nTotal Amount\t-\tRS."+(doc_rate+lab_rate)+"/-");
+                    System.out.print("\nOut Patient count = "+op_count);
+                    break;
+                }
+                case 3:
+                {
+                    lab_obj.lab();
+                    System.out.print("\n------------------------- Lab Bill ---------------------------\n");
+                    lab_rate = lab_obj.lab_bill();System.out.print("\n --------------------------------------");
+                    break;
+                }
+                case 4:
+                {
+                    System.out.print("Enter your token number : ");
+                    int t_ip = ip.nextInt();
+                    System.out.print("Enter your session number \t1. FN(9-12) \t2. AN(5-9) : ");
+                    int time_ip = ip.nextInt();
+                    double time = calendar.get(Calendar.HOUR);
+                    if(time_ip == 1 || time_ip ==2)
+                    {
+                        if((time > 9 && time<12) || (time>5 && time<9)){
+                            pat.pd();
+                            doc_rate= doc.doctor_func();
+                            lab_obj.lab();
+                            doc.medicines();
+                            System.out.print("\n\n------------------------ Billing --------------------------");
+                            pat.patient_print();
+                            System.out.print("Doctor Fees     -        Rs."+doc_rate+"/-\n------------------------- Lab Bill ---------------------------\n");
+                            lab_rate = lab_obj.lab_bill();            
+                            System.out.print("\n -----------------------------------------------------------\nTotal Amount\t-\tRS."+(doc_rate+lab_rate)+"/-");
+                                }
+                        else break;
+                        break;
+                    }
+                }
+                case 5:System.exit(0);
+            }
+            System.out.print("\n\nPress 1 to continue or 0 to Exit : ");
+            entry_ch = ip.nextInt();
+        }
+}}
